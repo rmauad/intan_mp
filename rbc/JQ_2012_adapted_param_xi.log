@@ -1,0 +1,96 @@
+Starting preprocessing of the model file ...
+Found 9 equation(s).
+Evaluating expressions...done
+Computing static model derivatives (order 1).
+Computing dynamic model derivatives (order 1).
+Processing outputs ...
+done
+Preprocessing completed.
+[Warning: Some of the parameters have no value
+(A22) when using steady. If these parameters are
+not initialized in a steadystate file or a
+steady_state_model-block, Dynare may not be able
+to solve the model...] 
+[Warning: Matrix is close to singular or badly
+scaled. Results may be inaccurate. RCOND =
+1.734692e-16.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('trust_region>dogleg', '/Applications/Dynare/4.6.3/matlab/trust_region.m', 198)" style="font-weight:bold">trust_region>dogleg</a> (<a href="matlab: opentoline('/Applications/Dynare/4.6.3/matlab/trust_region.m',198,0)">line 198</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('trust_region', '/Applications/Dynare/4.6.3/matlab/trust_region.m', 115)" style="font-weight:bold">trust_region</a> (<a href="matlab: opentoline('/Applications/Dynare/4.6.3/matlab/trust_region.m',115,0)">line 115</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('dynare_solve', '/Applications/Dynare/4.6.3/matlab/dynare_solve.m', 255)" style="font-weight:bold">dynare_solve</a> (<a href="matlab: opentoline('/Applications/Dynare/4.6.3/matlab/dynare_solve.m',255,0)">line 255</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('evaluate_steady_state', '/Applications/Dynare/4.6.3/matlab/evaluate_steady_state.m', 221)" style="font-weight:bold">evaluate_steady_state</a> (<a href="matlab: opentoline('/Applications/Dynare/4.6.3/matlab/evaluate_steady_state.m',221,0)">line 221</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('steady_', '/Applications/Dynare/4.6.3/matlab/steady_.m', 55)" style="font-weight:bold">steady_</a> (<a href="matlab: opentoline('/Applications/Dynare/4.6.3/matlab/steady_.m',55,0)">line 55</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('steady', '/Applications/Dynare/4.6.3/matlab/steady.m', 80)" style="font-weight:bold">steady</a> (<a href="matlab: opentoline('/Applications/Dynare/4.6.3/matlab/steady.m',80,0)">line 80</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('JQ_2012_adapted_param_xi.driver', '/Users/robertomauad/Library/Mobile Documents/com~apple~CloudDocs/2021/PhD/Paper_intangibles_mp_20220704/Empirical/code/intan_mp/rbc/+JQ_2012_adapted_param_xi/driver.m', 241)" style="font-weight:bold">JQ_2012_adapted_param_xi.driver</a> (<a href="matlab: opentoline('/Users/robertomauad/Library/Mobile Documents/com~apple~CloudDocs/2021/PhD/Paper_intangibles_mp_20220704/Empirical/code/intan_mp/rbc/+JQ_2012_adapted_param_xi/driver.m',241,0)">line 241</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('dynare', '/Applications/Dynare/4.6.3/matlab/dynare.m', 293)" style="font-weight:bold">dynare</a> (<a href="matlab: opentoline('/Applications/Dynare/4.6.3/matlab/dynare.m',293,0)">line 293</a>)
+] 
+[Warning: Matrix is close to singular or badly
+scaled. Results may be inaccurate. RCOND =
+1.734692e-16.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('trust_region>dogleg', '/Applications/Dynare/4.6.3/matlab/trust_region.m', 198)" style="font-weight:bold">trust_region>dogleg</a> (<a href="matlab: opentoline('/Applications/Dynare/4.6.3/matlab/trust_region.m',198,0)">line 198</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('trust_region', '/Applications/Dynare/4.6.3/matlab/trust_region.m', 115)" style="font-weight:bold">trust_region</a> (<a href="matlab: opentoline('/Applications/Dynare/4.6.3/matlab/trust_region.m',115,0)">line 115</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('dynare_solve', '/Applications/Dynare/4.6.3/matlab/dynare_solve.m', 255)" style="font-weight:bold">dynare_solve</a> (<a href="matlab: opentoline('/Applications/Dynare/4.6.3/matlab/dynare_solve.m',255,0)">line 255</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('evaluate_steady_state', '/Applications/Dynare/4.6.3/matlab/evaluate_steady_state.m', 221)" style="font-weight:bold">evaluate_steady_state</a> (<a href="matlab: opentoline('/Applications/Dynare/4.6.3/matlab/evaluate_steady_state.m',221,0)">line 221</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('steady_', '/Applications/Dynare/4.6.3/matlab/steady_.m', 55)" style="font-weight:bold">steady_</a> (<a href="matlab: opentoline('/Applications/Dynare/4.6.3/matlab/steady_.m',55,0)">line 55</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('steady', '/Applications/Dynare/4.6.3/matlab/steady.m', 80)" style="font-weight:bold">steady</a> (<a href="matlab: opentoline('/Applications/Dynare/4.6.3/matlab/steady.m',80,0)">line 80</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('JQ_2012_adapted_param_xi.driver', '/Users/robertomauad/Library/Mobile Documents/com~apple~CloudDocs/2021/PhD/Paper_intangibles_mp_20220704/Empirical/code/intan_mp/rbc/+JQ_2012_adapted_param_xi/driver.m', 241)" style="font-weight:bold">JQ_2012_adapted_param_xi.driver</a> (<a href="matlab: opentoline('/Users/robertomauad/Library/Mobile Documents/com~apple~CloudDocs/2021/PhD/Paper_intangibles_mp_20220704/Empirical/code/intan_mp/rbc/+JQ_2012_adapted_param_xi/driver.m',241,0)">line 241</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('dynare', '/Applications/Dynare/4.6.3/matlab/dynare.m', 293)" style="font-weight:bold">dynare</a> (<a href="matlab: opentoline('/Applications/Dynare/4.6.3/matlab/dynare.m',293,0)">line 293</a>)
+] 
+[Warning: Matrix is close to singular or badly
+scaled. Results may be inaccurate. RCOND =
+1.734692e-16.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('trust_region>dogleg', '/Applications/Dynare/4.6.3/matlab/trust_region.m', 198)" style="font-weight:bold">trust_region>dogleg</a> (<a href="matlab: opentoline('/Applications/Dynare/4.6.3/matlab/trust_region.m',198,0)">line 198</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('trust_region', '/Applications/Dynare/4.6.3/matlab/trust_region.m', 115)" style="font-weight:bold">trust_region</a> (<a href="matlab: opentoline('/Applications/Dynare/4.6.3/matlab/trust_region.m',115,0)">line 115</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('dynare_solve', '/Applications/Dynare/4.6.3/matlab/dynare_solve.m', 255)" style="font-weight:bold">dynare_solve</a> (<a href="matlab: opentoline('/Applications/Dynare/4.6.3/matlab/dynare_solve.m',255,0)">line 255</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('evaluate_steady_state', '/Applications/Dynare/4.6.3/matlab/evaluate_steady_state.m', 221)" style="font-weight:bold">evaluate_steady_state</a> (<a href="matlab: opentoline('/Applications/Dynare/4.6.3/matlab/evaluate_steady_state.m',221,0)">line 221</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('steady_', '/Applications/Dynare/4.6.3/matlab/steady_.m', 55)" style="font-weight:bold">steady_</a> (<a href="matlab: opentoline('/Applications/Dynare/4.6.3/matlab/steady_.m',55,0)">line 55</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('steady', '/Applications/Dynare/4.6.3/matlab/steady.m', 80)" style="font-weight:bold">steady</a> (<a href="matlab: opentoline('/Applications/Dynare/4.6.3/matlab/steady.m',80,0)">line 80</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('JQ_2012_adapted_param_xi.driver', '/Users/robertomauad/Library/Mobile Documents/com~apple~CloudDocs/2021/PhD/Paper_intangibles_mp_20220704/Empirical/code/intan_mp/rbc/+JQ_2012_adapted_param_xi/driver.m', 241)" style="font-weight:bold">JQ_2012_adapted_param_xi.driver</a> (<a href="matlab: opentoline('/Users/robertomauad/Library/Mobile Documents/com~apple~CloudDocs/2021/PhD/Paper_intangibles_mp_20220704/Empirical/code/intan_mp/rbc/+JQ_2012_adapted_param_xi/driver.m',241,0)">line 241</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('dynare', '/Applications/Dynare/4.6.3/matlab/dynare.m', 293)" style="font-weight:bold">dynare</a> (<a href="matlab: opentoline('/Applications/Dynare/4.6.3/matlab/dynare.m',293,0)">line 293</a>)
+] 
+
+
+
+
+Residuals of the static equations:
+
+Equation number 1 : -0.00051673 : FOC labor, equation 1 on p. 4 Appendix
+Equation number 2 : -0.00086755 : Euler equatoin, equation 2 on p. 4 Appendix
+Equation number 3 : 0.00039402 : budget constraint household, equation 3 on p. 4 Appendix
+Equation number 4 : 5.9382e-05 : FOC labor input, equation 4 on p. 4 Appendix
+Equation number 5 : 0.00023007 : FOC capital, equation 5 on p. 4 Appendix
+Equation number 6 : 0.00023189 : FOC bonds, equation 6 on p. 4 Appendix
+Equation number 7 : 0.00029128 : budget constraint firm, equation 7 on p. 4 Appendix
+Equation number 8 : 4.6397e-05 : Enforcement constraint, equation 8 on p. 4 Appendix
+Equation number 9 : 0 : Equation 1 of VAR in equation (11)
+
+
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('print_info')" style="font-weight:bold">print_info</a>
+Impossible to find the steady state (the sum of
+square residuals of the static equations is
+0.0000). Either the model doesn't have a steady
+state, there are an infinity of steady states,
+or the guess values are too far from the
+solution
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('steady', '/Applications/Dynare/4.6.3/matlab/steady.m', 102)" style="font-weight:bold">steady</a> (<a href="matlab: opentoline('/Applications/Dynare/4.6.3/matlab/steady.m',102,0)">line 102</a>)
+    print_info(info,options_.noprint, options_);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('JQ_2012_adapted_param_xi.driver', '/Users/robertomauad/Library/Mobile Documents/com~apple~CloudDocs/2021/PhD/Paper_intangibles_mp_20220704/Empirical/code/intan_mp/rbc/+JQ_2012_adapted_param_xi/driver.m', 241)" style="font-weight:bold">JQ_2012_adapted_param_xi.driver</a> (<a href="matlab: opentoline('/Users/robertomauad/Library/Mobile Documents/com~apple~CloudDocs/2021/PhD/Paper_intangibles_mp_20220704/Empirical/code/intan_mp/rbc/+JQ_2012_adapted_param_xi/driver.m',241,0)">line 241</a>)
+steady;
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('dynare', '/Applications/Dynare/4.6.3/matlab/dynare.m', 293)" style="font-weight:bold">dynare</a> (<a href="matlab: opentoline('/Applications/Dynare/4.6.3/matlab/dynare.m',293,0)">line 293</a>)
+evalin('base',[fname '.driver']) ;
+} 
+dynare JQ_2012_adapted
+Using 64-bit preprocessor
+Starting Dynare (version 4.6.3).
+Calling Dynare with arguments: none
+Starting preprocessing of the model file ...
+Found 10 equation(s).
+Evaluating expressions...done
+Computing static model derivatives (order 1).
+Computing dynamic model derivatives (order 1).
+Processing outputs ...
+done
+Preprocessing completed.
+

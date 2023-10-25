@@ -1,10 +1,9 @@
         
-var c n w k R d b mu z xi;
+var c n w k R d b mu z;
 
-varexo eps_z eps_xi;
+varexo eps_z; %eps_xi;
 
-parameters theta betta alppha delta tau kappa siggma sigma_z sigma_xi A11 A22
-        % xi
+parameters theta betta alppha delta tau kappa siggma sigma_z sigma_xi A11 A22 xi
         ;
      
         siggma=1;
@@ -18,8 +17,8 @@ parameters theta betta alppha delta tau kappa siggma sigma_z sigma_xi A11 A22
         sigma_xi = 0.0098;
         sigma_z = 0.0045;
         A11 = 0.9457;
-        A22 = 0.9703;
-    %xi = 0.5;
+        %A22 = 0.9703;
+        xi = 0.5;
 
 model;
 [name='FOC labor, equation 1 on p. 4 Appendix']
@@ -40,8 +39,8 @@ R*betta*(c/(c(+1)))^siggma*((1+2*kappa*(d-steady_state(d)))/(1+2*kappa*(d(+1)-st
 xi*(k-b*((1-tau)/(R-tau)))=z*k(-1)^theta*n^(1-theta);
 [name='Equation 1 of VAR in equation (11)']
 log(z/steady_state(z))=A11*log(z(-1)/steady_state(z))+eps_z;
-[name='Equation 2 of VAR in equation (11)']
-log(xi/steady_state(xi))=A22*log(xi(-1)/steady_state(xi))+eps_xi;
+% [name='Equation 2 of VAR in equation (11)']
+% log(xi/steady_state(xi))=A22*log(xi(-1)/steady_state(xi))+eps_xi;
  
 end;
 
@@ -56,12 +55,12 @@ d = 0.0777363061096046;
 b  = 5.74125144197337;
 mu = 0.00616274682441335;
 z = 1.99172038873746;
-xi = 3.42816407562063;
+%xi = 3.42816407562063;
 
 end;
 
 shocks;
-    var eps_xi=sigma_xi^2;
+  %  var eps_xi=sigma_xi^2;
     var eps_z= sigma_z^2;       
 end;
 

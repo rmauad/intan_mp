@@ -1,0 +1,183 @@
+Starting preprocessing of the model file ...
+Found 22 equation(s).
+Evaluating expressions...done
+Computing static model derivatives (order 1).
+Computing dynamic model derivatives (order 1).
+Processing outputs ...
+done
+Preprocessing completed.
+
+estimated_process = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+      bhat_OLS: [2×2 double]
+         resid: [105×2 double]
+    cov_matrix: [2×2 double]
+
+[Warning: Some of the parameters have no value
+(alppha) when using steady. If these parameters
+are not initialized in a steadystate file or a
+steady_state_model-block, Dynare may not be able
+to solve the model...] 
+
+STEADY-STATE RESULTS:
+
+c      		 0.811166
+n      		 0.3
+w      		 2.18251
+k      		 10.0795
+R      		 1.01158
+r      		 0.0178117
+d      		 0.114801
+b      		 3.63583
+mu     		 0.0377209
+v      		 6.56003
+z      		 1
+xi     		 0.163378
+y      		 1.06315
+invest 		 0.251989
+yhat   		 0
+chat   		 0
+ihat   		 0
+nhat   		 0
+byhat  		 0
+dyhat  		 0.107981
+muhat  		 0
+vyhat  		 0
+
+MODEL SUMMARY
+
+  Number of variables:         22
+  Number of stochastic shocks: 2
+  Number of state variables:   5
+  Number of jumpers:           6
+  Number of static variables:  12
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+Variables       eps_z    eps_xi
+eps_z        0.000036  0.000000
+eps_xi       0.000000  0.000076
+
+
+
+THEORETICAL MOMENTS (Bandpass filter, (6 32))
+VARIABLE         MEAN  STD. DEV.   VARIANCE
+c              0.8112     0.0023     0.0000
+n              0.3000     0.0030     0.0000
+w              2.1825     0.0117     0.0001
+k             10.0795     0.0275     0.0008
+R              1.0116     0.0003     0.0000
+r              0.0178     0.0005     0.0000
+d              0.1148     0.0199     0.0004
+b              3.6358     0.0795     0.0063
+mu             0.0377     0.0091     0.0001
+v              6.5600     0.0666     0.0044
+z              1.0000     0.0071     0.0001
+xi             0.1634     0.0017     0.0000
+y              1.0632     0.0100     0.0001
+invest         0.2520     0.0085     0.0001
+yhat           0.0000     0.0094     0.0001
+chat           0.0000     0.0029     0.0000
+ihat           0.0000     0.0335     0.0011
+nhat           0.0000     0.0099     0.0001
+byhat          0.0000     0.0276     0.0008
+dyhat          0.1080     0.0183     0.0003
+muhat          0.0000     0.2404     0.0578
+vyhat          0.0000     0.0026     0.0000
+
+
+
+VARIANCE DECOMPOSITION (in percent) (Bandpass filter, (6 32))
+           eps_z  eps_xi
+c          87.61   12.39
+n          27.26   72.74
+w          53.13   46.87
+k          67.83   32.17
+R          45.02   54.98
+r          45.02   54.98
+d          44.53   55.47
+b          37.34   62.66
+mu         49.03   50.97
+v          53.57   46.43
+z         100.00    0.00
+xi          0.00  100.00
+y          66.88   33.12
+invest     53.29   46.71
+yhat       66.88   33.12
+chat       87.61   12.39
+ihat       53.29   46.71
+nhat       27.26   72.74
+byhat      38.41   61.59
+dyhat      46.43   53.57
+muhat      49.03   50.97
+vyhat      54.52   45.48
+
+
+
+COEFFICIENTS OF AUTOCORRELATION (Bandpass filter, (6 32))
+Order          1       2       3       4       5
+c         0.9142  0.6923  0.4183  0.1749  0.0009
+n         0.8506  0.4795  0.0665 -0.2201 -0.3191
+w         0.9012  0.6472  0.3389  0.0756 -0.0965
+k         0.9517  0.8174  0.6237  0.4025  0.1802
+R         0.8840  0.5898  0.2438 -0.0315 -0.1837
+r         0.8840  0.5898  0.2438 -0.0315 -0.1837
+d         0.8464  0.4655  0.0441 -0.2440 -0.3362
+b         0.9299  0.7412  0.4877  0.2284  0.0040
+mu        0.8500  0.4773  0.0631 -0.2238 -0.3217
+v         0.9333  0.7527  0.5066  0.2496  0.0210
+z         0.9014  0.6473  0.3369  0.0687 -0.1096
+xi        0.8994  0.6404  0.3252  0.0550 -0.1216
+y         0.9045  0.6576  0.3539  0.0876 -0.0947
+invest    0.8921  0.6165  0.2869  0.0144 -0.1505
+yhat      0.9045  0.6576  0.3539  0.0876 -0.0947
+chat      0.9142  0.6923  0.4183  0.1749  0.0009
+ihat      0.8921  0.6165  0.2869  0.0144 -0.1505
+nhat      0.8506  0.4795  0.0665 -0.2201 -0.3191
+byhat     0.8470  0.4673  0.0463 -0.2431 -0.3380
+dyhat     0.8455  0.4624  0.0392 -0.2492 -0.3400
+muhat     0.8500  0.4773  0.0631 -0.2238 -0.3217
+vyhat     0.8479  0.4705  0.0521 -0.2354 -0.3301
+(b/(1+r)/Y: 3.360
+Debt-Capital Ratio: 0.354
+Total Debt-Output Ratio: 4.342
+Total Debt-Capital Ratio: 0.458
+Capital-Output Ratio: 9.481
+
+MODEL SUMMARY
+
+  Number of variables:         22
+  Number of stochastic shocks: 2
+  Number of state variables:   5
+  Number of jumpers:           6
+  Number of static variables:  12
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+Variables       eps_z    eps_xi
+eps_z        0.000036  0.000000
+eps_xi       0.000000  0.000076
+
+
+MODEL SUMMARY
+
+  Number of variables:         22
+  Number of stochastic shocks: 2
+  Number of state variables:   5
+  Number of jumpers:           6
+  Number of static variables:  12
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+Variables       eps_z    eps_xi
+eps_z        0.000036  0.000000
+eps_xi       0.000000  0.000076
+
+Std(Equity payout Model): 1.211 
+Std(Equity payout Data): 1.212 
+Std(Y): 	 2.76 	 3.43 	 2.09 	 2.88
+Std(N): 	 4.04 	 1.45 	 1.96 	 1.82
+Total computing time : 0h00m03s
+Note: warning(s) encountered in MATLAB/Octave code

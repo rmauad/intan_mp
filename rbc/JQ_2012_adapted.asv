@@ -1,25 +1,43 @@
         
-var c n w k R d b mu z xi;
+var c n w k R d b
+     mu
+     z;
+    % xi ${\xi}$ (long_name='Financial Conditions');
 
-varexo eps_z eps_xi;
+varexo eps_z ${\varepsilon_z}$ (long_name='Technology shock')
+%      eps_xi ${\varepsilon_{\xi}}$ (long_name='Financial Shock')
+         ;
 
-parameters theta betta alppha delta tau kappa siggma sigma_z sigma_xi A11 A22
-        % xi
+parameters theta ${\theta}$ (long_name='capital share')
+        betta ${\beta}$ (long_name='discount factor')
+        alppha ${\alpha}$ (long_name='disutility from work')
+        delta ${\delta}$ (long_name='depreciation')
+        tau ${\tau}$ (long_name='tax wedge')
+        kappa ${\kappa}$ (long_name='equity cost')
+        siggma ${\sigma}$ (long_name='risk aversion')
+        sigma_z ${\sigma_z}$ (long_name='std_z')
+        sigma_xi ${\sigma_xi}$ (long_name='std_xi')
+        A11 ${A_{11}}$ (long_name='A_11')
+        A12 ${A_{12}}$ (long_name='A_12')
+        xi
+%         A21 ${A_{21}}$ (long_name='A_21')
+%         A22 ${A_{22}}$ (long_name='A_22')
         ;
      
-        siggma=1;
-        theta = 0.36;
-        betta = 0.9825;
-        delta = 0.025;
-        tau = 0.35;
-        alppha = 1.8834; %from the paper
+siggma=1;
+theta = 0.36;
+betta = 0.9825;
+delta = 0.025;
+tau = 0.35;        
 
-        kappa = 0.146;
-        sigma_xi = 0.0098;
-        sigma_z = 0.0045;
-        A11 = 0.9457;
-        A22 = 0.9703;
-    %xi = 0.5;
+    kappa = 0.146;       
+    sigma_xi = 0.0098;  
+    sigma_z = 0.0045; 
+    A11 = 0.9457;
+    A12 = 0;
+    xi = 0.5;
+%     A21 = 0;
+%     A22 = 0.9703;
 
 model;
 [name='FOC labor, equation 1 on p. 4 Appendix']
@@ -40,28 +58,13 @@ R*betta*(c/(c(+1)))^siggma*((1+2*kappa*(d-steady_state(d)))/(1+2*kappa*(d(+1)-st
 xi*(k-b*((1-tau)/(R-tau)))=z*k(-1)^theta*n^(1-theta);
 [name='Equation 1 of VAR in equation (11)']
 log(z/steady_state(z))=A11*log(z(-1)/steady_state(z))+eps_z;
-[name='Equation 2 of VAR in equation (11)']
-log(xi/steady_state(xi))=A22*log(xi(-1)/steady_state(xi))+eps_xi;
+% [name='Equation 2 of VAR in equation (11)']
+% log(xi/steady_state(xi))=A21*log(z(-1)/steady_state(z))+A22*log(xi(-1)/steady_state(xi))+eps_xi;
  
 end;
 
-initval;
-
-c = 1.06381140017849;
-n = 0.314768183821549;
-w = 2.92394828113816;
-k = 10.0398805666893;
-R = 1.01157760814245;
-d = 0.0777363061096046;
-b  = 5.74125144197337;
-mu = 0.00616274682441335;
-z = 1.99172038873746;
-xi = 3.42816407562063;
-
-end;
-
 shocks;
-    var eps_xi=sigma_xi^2;
+%     var eps_xi=sigma_xi^2;
     var eps_z= sigma_z^2;       
 end;
 
