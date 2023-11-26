@@ -41,10 +41,9 @@ Equation number 13 : 0.28715 : g
 {Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('print_info')" style="font-weight:bold">print_info</a>
 Impossible to find the steady state (the sum of
 square residuals of the static equations is
-57907.0700). Either the model doesn't have a
-steady state, there are an infinity of steady
-states, or the guess values are too far from the
-solution
+57907.0700). Either the model doesn't have a steady
+state, there are an infinity of steady states, or
+the guess values are too far from the solution
 
 Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('steady', '/Applications/Dynare/4.6.3/matlab/steady.m', 102)" style="font-weight:bold">steady</a> (<a href="matlab: opentoline('/Applications/Dynare/4.6.3/matlab/steady.m',102,0)">line 102</a>)
     print_info(info,options_.noprint, options_);
@@ -55,7 +54,7 @@ steady;
 Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('dynare', '/Applications/Dynare/4.6.3/matlab/dynare.m', 293)" style="font-weight:bold">dynare</a> (<a href="matlab: opentoline('/Applications/Dynare/4.6.3/matlab/dynare.m',293,0)">line 293</a>)
 evalin('base',[fname '.driver']) ;
 } 
-dynare abc
+dynare abc.mod
 Using 64-bit preprocessor
 Starting Dynare (version 4.6.3).
 Calling Dynare with arguments: none

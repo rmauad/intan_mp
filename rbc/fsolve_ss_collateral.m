@@ -1,0 +1,87 @@
+% Roberto Baltieri Mauad
+% RBC model with financial markets and monetary policy - ABCc of RBCs
+% chapter 12
+% Fsolve to calculate the SS
+
+opts = optimoptions(@fsolve);
+opts.Display = 'iter';
+opts.OptimalityTolerance = 1e-12;
+opts.MaxIterations = 400000;
+opts.MaxFunctionEvaluations = 1000000;
+
+% Set parameters
+beta = .99;
+delta = .025;
+theta = .36;
+B = -2.5805;
+gamma = 0.95; %AR technology shock
+pi = 0.5; %AR money growth shock
+g_ss = 1;
+rho1 = 1;
+rho2 = 1;
+rho3 = 0.3;
+
+%% Steady state who rho1
+params1 = [beta; delta; theta; B; gamma; pi; rho1];
+
+init_var = [1; 1.66; .76; .9; .32; 0];
+
+eqs_ss = @(x) find_ss_collateral(x, beta, delta, B, theta,rho1, g_ss);
+x_min = fsolve(eqs_ss,init_var,opts);
+
+% Full steady state:
+r_ss = 1/beta - 1 + delta;
+rn_ss = g_ss/beta;
+H_ss = x_min(5);
+Y_ss = H_ss*(theta/r_ss)^(theta/(1-theta));
+%rf_ss = x_min(1);
+C_ss = x_min(4);
+w_ss = -C_ss*g_ss*B/beta;
+K_ss = H_ss*(theta/r_ss)^(1/(1-theta));
+util = log(C_ss) + H_ss*B;
+mu1_ss = x_min(6);
+rbc_ss1 = [g_ss; r_ss; rn_ss; x_min(1:end-2,:); Y_ss; w_ss; H_ss; K_ss; util; mu1_ss];
+
+
+%% Steady state who rho2
+params2 = [beta; delta; theta; B; gamma; pi; rho2];
+
+init_var = [1; 1.66; .76; .9; .32; 0];
+
+eqs_ss = @(x) find_ss_collateral(x, beta, delta, B, theta,rho2, g_ss);
+x_min = fsolve(eqs_ss,init_var,opts);
+
+% Full steady state:
+r_ss = 1/beta - 1 + delta;
+rn_ss = g_ss/beta;
+H_ss = x_min(5);
+Y_ss = H_ss*(theta/r_ss)^(theta/(1-theta));
+%rf_ss = x_min(1);
+C_ss = x_min(4);
+w_ss = -C_ss*g_ss*B/beta;
+K_ss = H_ss*(theta/r_ss)^(1/(1-theta));
+util = log(C_ss) + H_ss*B;
+mu1_ss = x_min(6);
+rbc_ss2 = [g_ss; r_ss; rn_ss; x_min(1:end-2,:); Y_ss; w_ss; H_ss; K_ss; util; mu1_ss];
+
+
+%% Steady state who rho3
+params3 = [beta; delta; theta; B; gamma; pi; rho3];
+
+init_var = [1; 1.66; .76; .9; .32; 0];
+
+eqs_ss = @(x) find_ss_collateral(x, beta, delta, B, theta,rho3, g_ss);
+x_min = fsolve(eqs_ss,init_var,opts);
+
+% Full steady state:
+r_ss = 1/beta - 1 + delta;
+rn_ss = g_ss/beta;
+H_ss = x_min(5);
+Y_ss = H_ss*(theta/r_ss)^(theta/(1-theta));
+%rf_ss = x_min(1);
+C_ss = x_min(4);
+w_ss = -C_ss*g_ss*B/beta;
+K_ss = H_ss*(theta/r_ss)^(1/(1-theta));
+util = log(C_ss) + H_ss*B;
+mu1_ss = x_min(6);
+rbc_ss3 = [g_ss; r_ss; rn_ss; x_min(1:end-2,:); Y_ss; w_ss; H_ss; K_ss; util; mu1_ss];

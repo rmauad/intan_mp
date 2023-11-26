@@ -15,6 +15,7 @@ H_ss = x(5);
 r_ss = 1/beta - 1 + delta;
 rn_ss = g_ss/beta;
 
+
 eqs = [
     rf_ss + beta*(1-theta)*(theta/r_ss)^(theta/(1-theta))/(C_ss*g_ss*B);
     (rn_ss - rf_ss)*(NP_ss) - rf_ss*(1-(1/g_ss))*(MP_ss);

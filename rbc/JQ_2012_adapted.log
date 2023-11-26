@@ -6,8 +6,7 @@ Computing dynamic model derivatives (order 1).
 Processing outputs ...
 done
 Preprocessing completed.
-[Warning: Matrix is singular to working
-precision.] 
+[Warning: Matrix is singular to working precision.] 
 [> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('trust_region>dogleg', '/Applications/Dynare/4.6.3/matlab/trust_region.m', 198)" style="font-weight:bold">trust_region>dogleg</a> (<a href="matlab: opentoline('/Applications/Dynare/4.6.3/matlab/trust_region.m',198,0)">line 198</a>)
 In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('trust_region', '/Applications/Dynare/4.6.3/matlab/trust_region.m', 115)" style="font-weight:bold">trust_region</a> (<a href="matlab: opentoline('/Applications/Dynare/4.6.3/matlab/trust_region.m',115,0)">line 115</a>)
 In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('dynare_solve', '/Applications/Dynare/4.6.3/matlab/dynare_solve.m', 255)" style="font-weight:bold">dynare_solve</a> (<a href="matlab: opentoline('/Applications/Dynare/4.6.3/matlab/dynare_solve.m',255,0)">line 255</a>)
@@ -113,3 +112,5 @@ b         0.9404  0.7789  0.5586  0.3264  0.1136
 mu        0.8004  0.3219 -0.1611 -0.4107 -0.3755
 z         0.9000  0.6426  0.3290  0.0595 -0.1177
 xi        0.9013  0.6469  0.3363  0.0679 -0.1103
+Total computing time : 0h00m11s
+Note: warning(s) encountered in MATLAB/Octave code

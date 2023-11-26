@@ -3,7 +3,7 @@ ssc install egenmore //install this to use xtile with egen
 
 // Creating Fama and French industry classification, quantiles of intangible capital and other variables
 cd /homes/nber/mauadr/orbis.work/orbis4/bycnty/US
-use year bvdidnumber intangibles totalassets netsales using dfindusd.dta
+use year bvdidnumber intangibles totalassets netsales numberofemployees netpropertyplantequipment using dfindusd.dta
 egen bvdid_year = concat(bvdidnumber year), punct(_)
 duplicates drop bvdid_year, force
 save /homes/nber/mauadr/bulk/orbis.work/intan_mp/data/dta/intan.dta, replace
@@ -12,16 +12,18 @@ use year bvdidnumber capitalexpenditures purchaseacquisitionofintangibles using 
 egen bvdid_year = concat(bvdidnumber year), punct(_)
 duplicates drop bvdid_year, force
 merge 1:1 bvdid_year using /homes/nber/mauadr/bulk/orbis.work/intan_mp/data/dta/intan.dta, keep(3) nogen
-save /homes/nber/mauadr/bulk/orbis.work/intan_mp/data/dta/intan_inv.dta
+save /homes/nber/mauadr/bulk/orbis.work/intan_mp/data/dta/intan_inv.dta, replace
 
-use year bvdidnumber cashflow operatingplebit using hindgfrusd.dta // takes quite long to run
+// takes quite long to run
+use year bvdidnumber cashflow operatingplebit using hindgfrusd.dta 
 egen bvdid_year = concat(bvdidnumber year), punct(_)
 duplicates drop bvdid_year, force
 merge 1:1 bvdid_year using /homes/nber/mauadr/bulk/orbis.work/intan_mp/data/dta/intan_inv.dta, keep(3) nogen
-save /homes/nber/mauadr/bulk/orbis.work/intan_mp/data/dta/intan_inv_ctrl.dta
+save /homes/nber/mauadr/bulk/orbis.work/intan_mp/data/dta/intan_inv_ctrl.dta, replace
 
+//this drops MANY observations.
 use bvdidnumber ussicprimarycodes using indclass.dta
-duplicates drop bvdidnumber, force //this drops MANY observations.
+duplicates drop bvdidnumber, force 
 merge 1:m bvdidnumber using /homes/nber/mauadr/bulk/orbis.work/intan_mp/data/dta/intan_inv_ctrl.dta, keep(3) nogen
 //save /homes/nber/mauadr/bulk/orbis.work/intan_mp/data/dta/intan_comp.dta
 
@@ -36,6 +38,7 @@ gen delta_init = 0.15
 gen sga_avr_gr = 0.1
 
 gen org_init = 0.3 * sga / (sga_avr_gr + delta_init)
+//gen org_init = sga / (sga_avr_gr + delta_init)
 gen org_cap = org_init
 
 // Sort the dataset by firm and year to ensure the data is in the correct order
@@ -45,17 +48,17 @@ sort bvdidnumber year
 levelsof bvdidnumber, local(firm_list)
 
 foreach bvdidnumber of local firm_list {
-    // Sort the data by firm and year again (just to be safe)
+    
     sort bvdidnumber year
 
-    // Generate a new variable that stores the lagged expenses for each firm
 	by bvdidnumber: replace org_cap = (1 - delta_init) * org_cap[_n- 1] + 0.3 * sga if _n > 1
 }
 
 
 //gen intan_at = intan/totalassets
-gen intan_at = org_cap/totalassets //try this alternative measure.
+gen intan_at = org_cap/totalassets
 gen inv_at = (capitalexpenditures + purchaseacquisitionofintangibles)/totalassets
+
 
 
 gen ff_indust = 1 if ussicprimarycodes >= 100 & ussicprimarycodes <= 999 | ussicprimarycodes >= 2000 & ussicprimarycodes <= 2399 | /*

@@ -17,7 +17,7 @@ pi = params(6);
 %evolution equation).
 
 %Money growth AR process
-nper = 100;
+nper = 12;
 g = zeros(1,nper);
 g(2) = 0.01; %money growth shock
 

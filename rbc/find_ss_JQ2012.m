@@ -1,0 +1,30 @@
+% Roberto Baltieri Mauad
+% RBC model with financial markets and monetary policy - ABCc of RBCs
+% chapter 12
+% Function to calculate the SS
+
+function eqs = find_ss_JQ2012(x, betta, delta, tau, theta, alpha, sigma)
+
+c_ss = x(1);
+n_ss = x(2);
+w_ss = x(3);
+k_ss = x(4);
+d_ss = x(5);
+b_ss = x(6);
+z_ss = x(7);
+xi_ss = x(8);
+
+
+% Basic equations
+R_ss = (1-tau)/betta + tau;
+mu_ss = -((1/betta - (1/(1 - tau + betta*tau) - 1) - 1 + delta)*k_ss/(xi_ss*theta*(k_ss - b_ss*((1-tau)/(R_ss-tau))))-1);
+
+
+eqs = [
+    w_ss*(1-n_ss) - alpha*c_ss^(-sigma);
+    -delta*k_ss + z_ss*k_ss^theta*n_ss^(1-theta) + d_ss - c_ss - 1;
+    (1-theta)*z_ss*k_ss^theta*n_ss^(-theta) - w_ss*(1/(1-mu_ss));
+    xi_ss - (1/mu_ss)*(1/ (1-tau+betta*tau) - 1)];
+
+%eq 5:
+ %betta*(1 - delta + (1 - mu_ss)*theta*z_ss*k_ss^(theta-1)*n_ss^(1-theta)) + (1/(1 - tau + betta*tau)-1) - 1

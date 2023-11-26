@@ -253,17 +253,17 @@ sigma_g = 0.5;
 % INITVAL instructions
 %
 options_.initval_file = false;
-oo_.steady_state(1) = 1.06381140017849;
-oo_.steady_state(2) = 0.314768183821549;
-oo_.steady_state(3) = 2.92394828113816;
-oo_.steady_state(4) = 10.0398805666893;
-oo_.steady_state(6) = 1.01157760814245;
-oo_.steady_state(5) = 1.01157760814245;
-oo_.steady_state(8) = 0.0777363061096046;
-oo_.steady_state(9) = 5.74125144197337;
-oo_.steady_state(10) = 0.00616274682441335;
-oo_.steady_state(11) = 1.99172038873746;
-oo_.steady_state(12) = 3.42816407562063;
+oo_.steady_state(1) = 0.484542;
+oo_.steady_state(2) = 0.309003;
+oo_.steady_state(3) = 1.32068;
+oo_.steady_state(4) = 6.28238;
+oo_.steady_state(6) = 1.01158;
+oo_.steady_state(5) = 1.01158;
+oo_.steady_state(8) = 0.0107384;
+oo_.steady_state(9) = 5.74125;
+oo_.steady_state(10) = 0.00616275;
+oo_.steady_state(11) = 0.702044;
+oo_.steady_state(12) = 1;
 oo_.steady_state(13) = 1;
 oo_.steady_state(7) = 1;
 if M_.exo_nbr > 0

@@ -1,8 +1,8 @@
 //Regressions measure monetary policy channels in the presence of intangibles.
 // Investment and leverage on several alternative monetary policy shocks.
 
-use data/dta/db_reg_q_cf_old_controls.dta
-//use data/dta/db_reg_emp_cf_q_with_exit.dta
+//use data/dta/db_reg_q_cf_old_controls.dta
+use data/dta/db_reg_emp_cf_q_with_exit.dta
 winsor2 inv_tot_at, replace cut(1 99) trim
 
 // ONLY RERUN THE LINES BELOW IF USING DATABASE GENERATED IN R

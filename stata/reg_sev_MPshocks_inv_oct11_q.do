@@ -44,39 +44,39 @@ xtset GVKEY year_q
 // gen sales_growth_lag1 = l1.sales_gr
 
 // //Labeling the variables
-//label variable log_ltdebt_issue_at " " //"Log(LT Debt Issuance)/assets"
-// label variable inv_tot_at " "
-// //label variable debt_at " "
-// //label variable inv_tang_at " "
-// //label variable inv_intan_at " "
-// label variable ffrate_zlb_lag1 "FF rate(t-1)"
-// label variable ffrate_zlb_lag2 "FF rate(t-2)"
-// //label variable mb "Market-to-book"
-// //label variable cf "Cash flow"
-// label variable sales_growth_lag1 "Sales growth(t-1)"
-// label variable d_cash_at_lag1 "Δ Cash/assets(t-1)"
-// label variable ip_g_lag1 "Δ Indust prod(t-1)"
-// label variable gdp_g_lag1 "Δ RGDP(t-1)"
-// label variable log_inflation_lag1 "Inflation(t-1)"
-// //label variable ir_diff_delta "LT interest rate change (10y-2y)"
-// label variable med "Median"
-// label variable tercile "Tercile"
-// label variable quartile "Quartile"
-// label variable quintile "Quintile"
-// label variable decile "Decile"
+// label variable log_ltdebt_issue_at " " //"Log(LT Debt Issuance)/assets"
+label variable inv_tot_at " "
+//label variable debt_at " "
+//label variable inv_tang_at " "
+//label variable inv_intan_at " "
+label variable ffrate_zlb_lag1 "FF rate(t-1)"
+label variable ffrate_zlb_lag2 "FF rate(t-2)"
+//label variable mb "Market-to-book"
+//label variable cf "Cash flow"
+label variable sales_growth_lag1 "Sales growth(t-1)"
+label variable d_cash_at_lag1 "Δ Cash/assets(t-1)"
+label variable ip_g_lag1 "Δ Indust prod(t-1)"
+label variable gdp_g_lag1 "Δ RGDP(t-1)"
+label variable log_inflation_lag1 "Inflation(t-1)"
+//label variable ir_diff_delta "LT interest rate change (10y-2y)"
+label variable med "Median"
+label variable tercile "Tercile"
+label variable quartile "Quartile"
+label variable quintile "Quintile"
+label variable decile "Decile"
 
-// label variable ns_lag1 "NS shock(t-1)"
-// label variable ns_lag2 "NS shock(t-2)"
-// label variable brw_lag1 "BRW shock(t-1)"
-// label variable brw_lag2 "BRW shock(t-2)"
-// label variable JKff3_q_lag1 "JKff3 shock(t-1)"
-// label variable JKff3_q_lag2 "JKff3 shock(t-2)"
-// label variable MP_S_Fffactor_lag1 "FFfactor shock(t-1)"
-// label variable MP_S_Fffactor_lag2 "FFfactor shock(t-2)"
-// label variable MP_S_LSAPfactor_lag1 "LSAPFactor shock(t-1)"
-// label variable MP_S_LSAPfactor_lag2 "LSAPFactor shock(t-2)"
-// label variable MP_S_Fgfactor_lag1 "Fgfactor shock(t-1)"
-// label variable MP_S_Fgfactor_lag2 "Fgfactor shock(t-2)"
+label variable ns_lag1 "NS shock(t-1)"
+label variable ns_lag2 "NS shock(t-2)"
+label variable brw_lag1 "BRW shock(t-1)"
+label variable brw_lag2 "BRW shock(t-2)"
+label variable JKff3_q_lag1 "JKff3 shock(t-1)"
+label variable JKff3_q_lag2 "JKff3 shock(t-2)"
+label variable MP_S_Fffactor_lag1 "FFfactor shock(t-1)"
+label variable MP_S_Fffactor_lag2 "FFfactor shock(t-2)"
+label variable MP_S_LSAPfactor_lag1 "LSAPFactor shock(t-1)"
+label variable MP_S_LSAPfactor_lag2 "LSAPFactor shock(t-2)"
+label variable MP_S_Fgfactor_lag1 "Fgfactor shock(t-1)"
+label variable MP_S_Fgfactor_lag2 "Fgfactor shock(t-2)"
 
 // Logit regression for the firms' survival probability
 * Takes time to run - so save the database after running.
@@ -215,6 +215,20 @@ est store Quartile
 xtreg inv_tot_at c.JKff3_q_lag1##c.quintile b_pred_qui d_cash_at_lag1 sales_growth_lag1 log_inflation_lag1 gdp_g_lag1 ip_g_lag1 i.year if year >= 1990,fe cluster(ff_indust) 
 est store Quintile
 xtreg inv_tot_at c.JKff3_q_lag1##c.decile b_pred_dec d_cash_at_lag1 sales_growth_lag1 log_inflation_lag1 gdp_g_lag1 ip_g_lag1 i.year if year >= 1990,fe cluster(ff_indust)
+est store Decile
+//outreg2 [Median Tercile Quartile Quintile Decile] using output/tex/investment.tex, replace label drop(i.year) dec(3) nocons alpha(0.01, 0.05, 0.1, 0.15) symbol(***, **, *, +)
+esttab Median Tercile Quartile Quintile Decile using output/tex/inv_JKff3.tex, b(%9.3f) label replace se ar2 stats(N r2, fmt(0 %9.3f)) star(+ 0.10 * 0.05 ** 0.01 *** 0.001) drop(*.year med tercile quartile quintile decile b_pred_med b_pred_ter b_pred_qua b_pred_qui b_pred_dec)
+
+* Old controls
+xtreg inv_tot_at c.JKff3_q_lag1##c.med b_pred_med c.cf sales_growth_lag1 cash_at CPI RGDP Ind_prod i.year if year >= 1990,fe cluster(ff_indust) 
+est store Median
+xtreg inv_tot_at c.JKff3_q_lag1##c.tercile b_pred_ter c.cf sales_growth_lag1 cash_at CPI RGDP Ind_prod i.year if year >= 1990,fe cluster(ff_indust) 
+est store Tercile
+xtreg inv_tot_at c.JKff3_q_lag1##c.quartile b_pred_qua c.cf sales_growth_lag1 cash_at CPI RGDP Ind_prod i.year if year >= 1990,fe cluster(ff_indust) 
+est store Quartile
+xtreg inv_tot_at c.JKff3_q_lag1##c.quintile b_pred_qui c.cf sales_growth_lag1 cash_at CPI RGDP Ind_prod i.year if year >= 1990,fe cluster(ff_indust) 
+est store Quintile
+xtreg inv_tot_at c.JKff3_q_lag1##c.decile b_pred_dec c.cf sales_growth_lag1 cash_at CPI RGDP Ind_prod i.year if year >= 1990,fe cluster(ff_indust)
 est store Decile
 //outreg2 [Median Tercile Quartile Quintile Decile] using output/tex/investment.tex, replace label drop(i.year) dec(3) nocons alpha(0.01, 0.05, 0.1, 0.15) symbol(***, **, *, +)
 esttab Median Tercile Quartile Quintile Decile using output/tex/inv_JKff3.tex, b(%9.3f) label replace se ar2 stats(N r2, fmt(0 %9.3f)) star(+ 0.10 * 0.05 ** 0.01 *** 0.001) drop(*.year med tercile quartile quintile decile b_pred_med b_pred_ter b_pred_qua b_pred_qui b_pred_dec)

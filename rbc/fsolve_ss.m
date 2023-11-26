@@ -33,7 +33,6 @@ Y_ss = H_ss*(theta/r_ss)^(theta/(1-theta));
 rf_ss = x_min(1);
 C_ss = x_min(4);
 w_ss = -C_ss*g_ss*B/beta;
-H_ss = x_min(5);
 K_ss = H_ss*(theta/r_ss)^(1/(1-theta));
 util = log(C_ss) + H_ss*B;
 rbc_ss = [g_ss; r_ss; rn_ss; x_min(1:end-1,:); Y_ss; w_ss; H_ss; K_ss; util];
